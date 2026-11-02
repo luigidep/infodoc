@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>La Storia di Internet | Dalle Origini al Web Moderno</title>
+  <link rel="stylesheet" href="style.css">
+  <!-- Google Fonts per una tipografia moderna e leggibile -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Fira+Code:wght@400;600&family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+</head>
+<body class="dark-theme">
+  <!-- Header & Navigazione -->
+  <header class="main-header">
+    <div class="container header-container">
+      <div class="logo-area">
+        <div class="logo-badge">🌐 1969 &rarr; OGGI</div>
+        <h1>Storia di <span>Internet</span></h1>
+      </div>
+      <nav class="nav-links">
+        <a href="#video-section">📺 Video</a>
+        <a href="#timeline-section">⏳ Timeline</a>
+        <a href="#glossary-section">📖 Glossario</a>
+        <a href="#quiz-section">🎯 Quiz</a>
+      </nav>
+      <div class="header-actions">
+        <button id="theme-toggle" class="btn-icon" title="Cambia tema Chiaro/Scuro" aria-label="Cambia tema">
+          <span id="theme-icon">☀️</span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- Hero Section -->
+  <section class="hero">
+    <div class="container hero-content">
+      <span class="hero-tag">Corso AI & Vibe Coding</span>
+      <h2 class="hero-title">Come una rete militare di 4 computer ha trasformato l'umanità</h2>
+      <p class="hero-subtitle">
+        Da ARPANET e il primo messaggio "LO" nel 1969, al World Wide Web del CERN, fino all'intelligenza artificiale distribuita. 
+        Guarda il video, esplora la linea del tempo interattiva e mettiti alla prova con il quiz!
+      </p>
+      <div class="hero-cta">
+        <a href="#video-section" class="btn btn-primary">Guarda il Video 🎬</a>
+        <a href="#timeline-section" class="btn btn-secondary">Esplora la Timeline 🧭</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Sezione Video Interattivo -->
+  <section id="video-section" class="section video-section">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-tag">Area Multimediale</span>
+        <h2>Documentario & Video Didattico</h2>
+        <p>Scegli uno dei video selezionati oppure inserisci il link di un video a tua scelta.</p>
+      </div>
+
+      <div class="video-grid">
+        <!-- Player Container -->
+        <div class="player-wrapper">
+          <div class="responsive-iframe-box">
+            <iframe 
+              id="youtube-player"
+              src="https://www.youtube.com/embed/3EQ35ogcAZg?enablejsapi=1&rel=0" 
+              title="Video Storia di Internet" 
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
+              allowfullscreen>
+            </iframe>
+          </div>
+
+          <!-- Video Custom Input Bar -->
+          <div class="custom-video-bar">
+            <label for="custom-video-input">Hai un altro video YouTube?</label>
+            <div class="input-group">
+              <input type="text" id="custom-video-input" placeholder="Incolla link o ID YouTube (es. AEaKrq3SpW8)...">
+              <button id="btn-load-custom-video" class="btn btn-small btn-primary">Carica</button>
+            </div>
+          </div>
+        </div>
+
+        <!-- Colonna Info & Selettore Video -->
+        <div class="video-sidebar">
+          <div class="sidebar-box">
+            <h3 class="sidebar-title">Seleziona Video</h3>
+            <div class="video-playlist" id="video-playlist">
+              <!-- Generato dinamicamente via JS -->
+            </div>
+          </div>
+
+          <div class="sidebar-box highlights-box">
+            <h3 class="sidebar-title">Momenti Chiave da Ricordare</h3>
+            <ul class="highlight-list">
+              <li>
+                <span class="hl-badge">1969</span>
+                <div>
+                  <strong>Nascita di ARPANET</strong>
+                  <p>Il Dipartimento della Difesa USA sviluppa la prima rete a commutazione di pacchetto.</p>
+                </div>
+              </li>
+              <li>
+                <span class="hl-badge">1983</span>
+                <div>
+                  <strong>Protocollo TCP/IP</strong>
+                  <p>Adottato come standard universale: nasce ufficialmente l'architettura di Internet.</p>
+                </div>
+              </li>
+              <li>
+                <span class="hl-badge">1991</span>
+                <div>
+                  <strong>Il World Wide Web</strong>
+                  <p>Tim Berners-Lee rilascia il primo sito web e rende Internet accessibile al mondo.</p>
+                </div>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Sezione Timeline Interattiva -->
+  <section id="timeline-section" class="section timeline-section">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-tag">Cronologia Storica</span>
+        <h2>La Linea del Tempo di Internet</h2>
+        <p>Clicca sulle epoche o sulle schede per scoprire aneddoti, retroscena e l'importanza di ciascuna pietra miliare.</p>
+      </div>
+
+      <!-- Filtri Epoca -->
+      <div class="timeline-filters" id="timeline-filters">
+        <button class="filter-btn active" data-filter="all">Tutte le Epoche</button>
+        <button class="filter-btn" data-filter="pionieri">1960-1980: I Pionieri</button>
+        <button class="filter-btn" data-filter="espansione">1981-1999: L'Invenzione del Web</button>
+        <button class="filter-btn" data-filter="moderna">2000-Oggi: Social & Mobile & AI</button>
+      </div>
+
+      <!-- Timeline Container -->
+      <div class="timeline-container" id="timeline-container">
+        <!-- Generato dinamicamente da app.js -->
+      </div>
+    </div>
+  </section>
+
+  <!-- Sezione Glossario -->
+  <section id="glossary-section" class="section glossary-section">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-tag">Dizionario Tecnologico</span>
+        <h2>Glossario di Base di Internet</h2>
+        <p>I concetti fondamentali per capire come funziona veramente la rete.</p>
+      </div>
+
+      <div class="search-box-wrapper">
+        <input type="text" id="glossary-search" placeholder="Cerca un termine (es. TCP/IP, DNS, Pacchetto, CERN)...">
+      </div>
+
+      <div class="glossary-grid" id="glossary-grid">
+        <!-- Generato dinamicamente da app.js -->
+      </div>
+    </div>
+  </section>
+
+  <!-- Sezione Quiz Interattivo -->
+  <section id="quiz-section" class="section quiz-section">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-tag">Verifica delle Conoscenze</span>
+        <h2>Mettiti alla Prova!</h2>
+        <p>Rispondi alle domande per vedere quanto hai imparato sulla storia di Internet.</p>
+      </div>
+
+      <div class="quiz-card" id="quiz-card">
+        <div class="quiz-header">
+          <div class="quiz-progress-text">Domanda <span id="current-q-num">1</span> di <span id="total-q-num">5</span></div>
+          <div class="quiz-score-badge">Punti: <span id="current-score">0</span></div>
+        </div>
+        <div class="quiz-progress-bar">
+          <div class="quiz-progress-fill" id="quiz-progress-fill"></div>
+        </div>
+
+        <div class="quiz-body" id="quiz-body">
+          <h3 class="quiz-question" id="quiz-question">Caricamento domanda...</h3>
+          <div class="quiz-options" id="quiz-options">
+            <!-- Opzioni generate da app.js -->
+          </div>
+          <div class="quiz-feedback" id="quiz-feedback"></div>
+        </div>
+
+        <div class="quiz-footer">
+          <button id="btn-next-question" class="btn btn-primary" style="display: none;">Prossima Domanda &rarr;</button>
+        </div>
+      </div>
+
+      <!-- Risultato Finale Quiz -->
+      <div class="quiz-results-card" id="quiz-results" style="display: none;">
+        <div class="results-icon" id="results-icon">🏆</div>
+        <h3 id="results-title">Ottimo lavoro!</h3>
+        <p id="results-desc">Hai completato il quiz con successo.</p>
+        <div class="results-score-big" id="results-score">Punteggio: 5/5</div>
+        <button id="btn-restart-quiz" class="btn btn-primary">Riprova il Quiz 🔄</button>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="main-footer">
+    <div class="container footer-content">
+      <p>Progetto Didattico: <strong>Storia e Architettura di Internet</strong></p>
+      <p class="subtext">Sviluppato per il corso IA & Vibe Coding • IIS Curiel</p>
+    </div>
+  </footer>
+
+  <script src="app.js"></script>
+</body>
+</html>
